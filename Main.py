@@ -2,47 +2,6 @@ import subprocess
 import sys
 import os
 
-def install_and_import(package_name, import_name=None):
-    """Install a package and return True if successful"""
-    if import_name is None:
-        import_name = package_name
-    
-    try:
-        __import__(import_name)
-        return True
-    except ImportError:
-        print(f"\n{package_name} not found. Installing...")
-        try:
-            subprocess.check_call([sys.executable, "-m", "pip", "install", package_name])
-            print(f"✓ {package_name} installed successfully!")
-            return True
-        except subprocess.CalledProcessError as e:
-            print(f"✗ Failed to install {package_name}: {e}")
-            return False
-
-# Install packages if needed
-print("Checking required packages...")
-
-pygame_ok = install_and_import('pygame')
-pywin32_ok = True
-
-if sys.platform == 'win32':
-    pywin32_ok = install_and_import('pywin32', 'win32gui')
-
-if not pygame_ok or not pywin32_ok:
-    print("\n" + "="*60)
-    print("ERROR: Failed to install required packages")
-    print("="*60)
-    print("\nPlease install manually:")
-    if not pygame_ok:
-        print("    pip install pygame")
-    if not pywin32_ok:
-        print("    pip install pywin32")
-    print("="*60)
-    input("\nPress Enter to exit...")
-    sys.exit(1)
-
-# Now import everything
 import pygame
 if sys.platform == 'win32':
     import win32gui
@@ -59,7 +18,7 @@ ASSETSDIR = os.path.join(MAINDIR, "Assets")
 CONFIGDIR = os.path.join(ASSETSDIR, "Config")
 comtxt = os.path.join(CONFIGDIR, "Coms.txt")
 
-# Create directories if they don't exist
+# Creates Dir incase they do not exist already
 os.makedirs(CONFIGDIR, exist_ok=True)
 
 with open(comtxt, 'w') as f:
@@ -67,7 +26,7 @@ with open(comtxt, 'w') as f:
 
 SPRITESDIR = os.path.join(ASSETSDIR, "Sprites")
 
-# Check if sprites directory exists
+# checksprite dir exist
 if not os.path.exists(SPRITESDIR):
     print(f"ERROR: Sprites directory not found at {SPRITESDIR}")
     input("Press Enter to exit...")
@@ -90,7 +49,7 @@ script_path = os.path.join(MAINDIR, "Pet.py")
 
 selectPet = 0
 
-# Load images with error checking
+# image load check
 try:
     background_img = pygame.transform.scale(
         pygame.image.load(os.path.join(CONFIGDIR, "Background.png")), 
@@ -211,7 +170,7 @@ while running:
                 display_y = 20 + (230 - new_height) // 2 
                 screen.blit(current_sprite, (display_x, display_y))
         else:
-            # Draw a placeholder if Display.png is missing
+            #fallback placeholder incase missing image
             font = pygame.font.Font(None, 36)
             text = font.render("No Preview", True, (255, 255, 255))
             text_rect = text.get_rect(center=(200, 135))
