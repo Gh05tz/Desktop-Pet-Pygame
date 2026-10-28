@@ -1,10 +1,10 @@
-<h1>🐾 Desktop Pet (Pygame)</h1>
+<h1> Desktop Pet (Pygame)</h1>
 
 A customizable desktop pet made with Pygame!
 
-You can easily add your own pets by dropping sprite files into the project—no code changes required.
+You can easily add your own pets by dropping sprite files into the project—(no code changes required!!!)
 
-<h1>✨ Features</h1>
+<h1>Features</h1>
 
 Animated desktop pets
 
@@ -12,10 +12,10 @@ Easy sprite customization
 
 Configurable size and animation speed
 
-Simple file-based setup
+Simple file based setup
 
 
-<h1>📁How to add a Custom Pet</h1>
+<h1>How to add a Custom Pet?</h1>
 
 
 To add your own pet:
@@ -40,16 +40,16 @@ To add your own pet:
 
 &emsp;&emsp;A Idle folder 
 
-&emsp;&emsp;A Rare Idle folder (Optional) Put An animation inside of for it to have a chance of playing istead of the default idle animation (See animation rules below)
+&emsp;&emsp;A Rare Idle folder (Optional) Put an animation inside of it for it to have a chance of playing instead of the default idle animation (See animation rules below)
 
 
 &emsp;Inside of walk and idle folders add your animation images(see animation Rules below) 
   
-&emsp;Even if you do not have an animation for them you must have at least one image in each
+&emsp; Even if you do not have an animation for them, you must have at least one image in each
   
 
 
-<h1>🎞️ Pet Requirements</h1>
+<h1>Pet Requirements</h1>
 
 &emsp;Your pet’s sprite folder must contain the following structure:
   
@@ -79,7 +79,7 @@ All frames should be the same size
 
 
   
-<h1>⚙️ Configuration File</h1>
+<h1>Configuration File</h1>
 
 &emsp;You may include a Configuration.txt file if you want to change pet setings using command given below (recommended for non included pets)
 
@@ -95,7 +95,7 @@ All frames should be the same size
 &emsp;&emsp;;W = 100;
 
 
-<h1>🛠️ Available Commands:</h1>
+<h1>Available Commands:</h1>
 
 W  : Sets sprite width(pixels)
   
@@ -112,7 +112,7 @@ notalk : Dissable pet speech (Don't set to a number)
 nojump : Dissable pet jumping
 
 
-<h1>🔧 Default Settings</h1>
+<h1>Default Settings</h1>
 
 If no configuration is provided, pets will use:
 
@@ -126,7 +126,7 @@ If no configuration is provided, pets will use:
 
 &emsp;action: 1
 
-<h1>⚙️ Speech File</h1>
+<h1>Speech File</h1>
 &emsp;You may add speech files to any pet you want
 
 &emsp;Similarly to commands any text you want your pet to "say" must be surrounded by two ;
@@ -142,7 +142,7 @@ If no configuration is provided, pets will use:
 &emsp;If no speech is provided, the pet will choose from a list of three things on what it says(Hi, Hello, Play with me)
 
 
-<h1>📚 Example Pet</h1>
+<h1>Example Pet</h1>
 
 For a complete working example, check out:
 
